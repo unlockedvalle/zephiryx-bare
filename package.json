@@ -1,0 +1,11 @@
+{
+  "name": "zephiryx-bare",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@tomphttp/bare-server-node": "latest"
+  }
+}
