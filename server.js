@@ -1,9 +1,7 @@
-import { createBareServer, createBareMux } from '@tomphttp/bare-server-node';
+import { createBareServer } from '@tomphttp/bare-server-node';
 import { createServer } from 'node:http';
 
-const bare = createBareServer('/bare/', {
-  mux: createBareMux()  // ← Esto es lo nuevo para v3+ – soluciona crashes y 404
-});
+const bare = createBareServer('/bare/');
 
 const server = createServer();
 
@@ -26,5 +24,5 @@ server.on('upgrade', (req, socket, head) => {
 
 const PORT = process.env.PORT || 8080;
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Bare v3+ ON en puerto ${PORT} – Compatible con UV 2025`);
+  console.log(`Bare v2 ON en puerto ${PORT} – Listo para UV 2025`);
 });
